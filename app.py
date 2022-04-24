@@ -49,7 +49,7 @@ CORS(app)
 
 def create_app():
     # Database Connection
-    app.config["MONGO_URI"] = "mongodb+srv://{}:{}@{}.vfd0n.mongodb.net/{}?retryWrites=true&w=majority".format(
+    app.config["MONGO_URI"] = "mongodb+srv://{}:{}@{}.1dhgw.mongodb.net/{}?retryWrites=true&w=majority".format(
         database_credentials["user"],
         database_credentials["password"],
         database_credentials["cluster"],
