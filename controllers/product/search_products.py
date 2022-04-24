@@ -31,6 +31,7 @@ def search_product():
                     }
                 }
             },
+            
 
             {"$match": {"record_status": "ACTIVE"}},
 
@@ -52,6 +53,7 @@ def search_product():
 
             {"$unwind": "$supplier"}
         ])
+        print(products)
 
         # searchd_product = mongo.db.product.find_one({"_id": ObjectId(product_id)})
 
