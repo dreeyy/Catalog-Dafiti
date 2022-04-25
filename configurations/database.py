@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 # ENV VARIABLES
 load_dotenv()
 
+#ENV 
 user = os.getenv("DATABASEUSER")
 password = os.getenv("DATABASEPASSWORD")
 cluster = os.getenv("CLUSTER")

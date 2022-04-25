@@ -10,9 +10,13 @@ from flask_bcrypt import generate_password_hash
 # Database
 from configurations.database import mongo
 
+from flasgger import Swagger 
+from flasgger.utils import swag_from
+
 delete_product_blueprint = Blueprint("delete_product_blueprint", __name__)
 
 @delete_product_blueprint.route("/delete-product", methods=["DELETE"])
+@swag_from("delete-product_config.yml")
 def delete_product():
     product = request.json
 

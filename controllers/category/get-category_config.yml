@@ -1,0 +1,10 @@
+summary: "Get Category"
+description: ""
+consumes:
+- "aplication/json"
+produces:
+- "aplication/json"
+    
+responses:
+  404:
+    description: "category_not_found"

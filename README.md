@@ -1,4 +1,4 @@
-# product-catalog-api
+# product-catalog-api Dafiti
 
 ## Steps to run the API:
 - create _.env_ file and define the following variables:

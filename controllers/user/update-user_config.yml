@@ -1,0 +1,53 @@
+summary: "Update user"
+description: ""
+consumes:
+- "aplication/json"
+produces:
+- "aplication/json"
+parameters:
+- in: "body"
+  name: "body"
+  description: "field body"
+  required: true
+  schema: 
+    type: "object"
+    properties:
+      user_id:
+        type: "ObjectId(user)"
+        format: "id"
+        example: 62638117161b80e1ada55c5a
+
+      email:
+        type: "string"
+        format: "object"
+        example: "@.com"
+
+      first_name:
+        type: "string"
+        format: "object"
+        example: "Fred"
+
+      last_name:
+        type: "string"
+        format: "object"
+        example: "Santos"
+
+      contact_number:
+        type: "string"
+        format: "object"
+        example: "11X9999-9999"
+
+      password:
+        type: "string"
+        format: "object"
+        example: "123456"
+
+      role:
+        type: "string"
+        format: "object"
+        example: "SUPPLIER or CUSTOMER"
+
+     
+responses:
+  404:
+    description: "user_not_found"

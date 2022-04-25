@@ -10,9 +10,14 @@ from flask_bcrypt import generate_password_hash
 # Database
 from configurations.database import mongo
 
+from flasgger import Swagger 
+from flasgger.utils import swag_from
+
 delete_category_blueprint = Blueprint("delete_category_blueprint", __name__)
 
 @delete_category_blueprint.route("/delete-category", methods=["DELETE"])
+@swag_from("delete-category_config.yml")
+
 def delete_category():
     category = request.json
 

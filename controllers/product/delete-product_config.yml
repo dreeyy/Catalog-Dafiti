@@ -1,0 +1,22 @@
+summary: "Delete Product"
+description: ""
+consumes:
+- "aplication/json"
+produces:
+- "aplication/json"
+parameters:
+- in: "body"
+  name: "body"
+  description: "field body"
+  required: true
+  schema: 
+    type: "object"
+    properties:
+      _id:
+        type: "ObjectId(product_id)"
+        format: "object"
+        example: 6265ca97e61590de08488fb8
+     
+responses:
+  404:
+    description: "product_not_found"

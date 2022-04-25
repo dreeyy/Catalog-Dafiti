@@ -10,9 +10,13 @@ from flask_bcrypt import generate_password_hash
 # Database
 from configurations.database import mongo
 
+from flasgger import Swagger 
+from flasgger.utils import swag_from
+
 update_category_blueprint = Blueprint("update_category_blueprint", __name__)
 
 @update_category_blueprint.route("/update-category", methods=["PUT"])
+@swag_from("update-category_config.yml")
 def update_category():
     category = request.json
 

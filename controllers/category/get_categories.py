@@ -9,9 +9,13 @@ from flask import Blueprint, request, jsonify
 # Database
 from configurations.database import mongo
 
+from flasgger import Swagger 
+from flasgger.utils import swag_from
+
 get_categories_blueprint = Blueprint("get_categories_blueprint", __name__)
 
 @get_categories_blueprint.route("/get-categories", methods=["GET"])
+@swag_from("get-category_config.yml")
 def get_categories():
     active = "ACTIVE"
     categories = mongo.db.category.find({"record_status": active})

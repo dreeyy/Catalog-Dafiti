@@ -43,7 +43,30 @@ from controllers.product.delete_product import delete_product_blueprint
 from controllers.product.rate_product import rate_product_blueprint
 from controllers.product.search_products import search_products_blueprint
 
+from flasgger import Swagger 
+#from flasgger.utils import swag_from
+
+
+
 app = Flask(__name__)
+#app.config['SWAGGER'] = {
+#    'title': 'My API',
+#    'uiversion': 3
+#}
+swagger = Swagger(app)
+#app.config['SWAGGER'] = {"title":{"Product Catalog-UI"},"uiversion":2}
+
+#swagger_config={"headers":[],"specs":[{
+#    "endpoint":"apispec_1",
+#    "route":"/apispec_1.json",
+#    "rule_filter": lambda rule: True,
+#    "model_filter": lambda tag: True
+#}],
+#"static_url_path":"/flasgger_static",
+#"swagger_ui":True,
+#"specs_route":"/swagger/"}
+
+#swagger = Swagger(app,config=swagger_config)
 
 CORS(app)
 
