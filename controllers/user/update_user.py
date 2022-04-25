@@ -10,9 +10,13 @@ from flask_bcrypt import generate_password_hash
 # Database
 from configurations.database import mongo
 
+from flasgger import Swagger 
+from flasgger.utils import swag_from
+
 update_user_blueprint = Blueprint("update_user_blueprint", __name__)
 
 @update_user_blueprint.route("/update-user", methods=["PUT"])
+@swag_from("update-user_config.yml")
 def update_user():
     user = request.json
 

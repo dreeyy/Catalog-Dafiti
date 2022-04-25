@@ -9,9 +9,13 @@ from flask import Blueprint, request, jsonify
 # Database
 from configurations.database import mongo
 
+from flasgger import Swagger 
+from flasgger.utils import swag_from
+
 get_users_blueprint = Blueprint("get_users_blueprint", __name__)
 
 @get_users_blueprint.route("/get-users", methods=["GET"])
+@swag_from("get-user_config.yml")
 def get_users():
     active = "ACTIVE"
     users = mongo.db.user.find({"record_status": active}, {"password": 0})

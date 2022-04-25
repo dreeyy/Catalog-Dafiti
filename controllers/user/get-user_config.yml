@@ -1,0 +1,10 @@
+summary: "Get User"
+description: ""
+consumes:
+- "aplication/json"
+produces:
+- "aplication/json"
+     
+responses:
+  404:
+    description: "product_not_found"

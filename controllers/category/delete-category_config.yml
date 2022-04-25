@@ -1,0 +1,24 @@
+summary: "Delete Category"
+description: ""
+consumes:
+- "aplication/json"
+produces:
+- "aplication/json"
+parameters:
+- in: "body"
+  name: "body"
+  description: "field body"
+  required: true
+  schema: 
+    type: "object"
+    properties:
+
+      category_id:
+        type: "ObjectId(category_id)"
+        format: "object"
+        example: "Shoe"
+
+    
+responses:
+  404:
+    description: "category_not_found"
