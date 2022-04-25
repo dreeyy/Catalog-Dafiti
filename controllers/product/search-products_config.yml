@@ -1,0 +1,34 @@
+summary: "Search Product"
+description: ""
+consumes:
+- "aplication/json"
+produces:
+- "aplication/json"
+parameters:
+- in: "body"
+  name: "body"
+  description: "field body"
+  required: true
+  schema: 
+    type: "object"
+    properties:
+      search_string:
+        type: "string"
+        format: "object"
+        example: "Camiseta"
+
+      search_criteria:
+        type: "string"
+        format: "object"
+        example: "product"
+
+
+
+
+responses:
+  404:
+    description: "products_not_found"
+  404:
+    description: "supplier_not_found"
+  404:
+    description: "category_not_found"

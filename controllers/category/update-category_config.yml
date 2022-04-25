@@ -1,0 +1,27 @@
+summary: "Update Category"
+description: ""
+consumes:
+- "aplication/json"
+produces:
+- "aplication/json"
+parameters:
+- in: "body"
+  name: "body"
+  description: "field body"
+  required: true
+  schema: 
+    type: "object"
+    properties:
+      category_id:
+        type: "ObjectId(category_id)"
+        format: "id"
+        example: 6265c48ae61590de08488fae
+
+      category_name:
+        type: "string"
+        format: "object"
+        example: "Shoe"
+    
+responses:
+  404:
+    description: "category_not_found"

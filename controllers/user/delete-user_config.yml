@@ -1,0 +1,22 @@
+summary: "Delete user"
+description: ""
+consumes:
+- "aplication/json"
+produces:
+- "aplication/json"
+parameters:
+- in: "body"
+  name: "body"
+  description: "field body"
+  required: true
+  schema: 
+    type: "object"
+    properties:
+      user_id:
+        type: "ObjectId(user)"
+        format: "id"
+        example: 62638117161b80e1ada55c5a
+        
+responses:
+  404:
+    description: "user_not_found"

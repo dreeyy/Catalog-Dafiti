@@ -9,12 +9,18 @@ from flask import Blueprint, request, jsonify
 # Database
 from configurations.database import mongo
 
+from flasgger import Swagger 
+from flasgger.utils import swag_from
+
 search_products_blueprint = Blueprint("search_products_blueprint", __name__)
 
 @search_products_blueprint.route("/search-products", methods=["POST"])
+@swag_from("search-products_config.yml")
 def search_product():
     search_criteria = request.args.get("search_criteria")
     search_product = request.json
+    print(search_criteria)
+    print(search_product)
 
     search_string = search_product["search_string"]
     print(search_string)

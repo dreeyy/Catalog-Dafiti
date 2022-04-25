@@ -1,0 +1,47 @@
+summary: "Update Product"
+description: ""
+consumes:
+- "aplication/json"
+produces:
+- "aplication/json"
+parameters:
+- in: "body"
+  name: "body"
+  description: "field body"
+  required: true
+  schema: 
+    type: "object"
+    properties:
+      product_id:
+        type: "id"
+        format: "uuid"
+        example: 6265c890e61590de08488fb4
+      produc_name:
+        type: "string"
+        format: "object"
+        example: "Camiseta"
+
+      category:
+        type: "ObjectId(category)"
+        format: "object"
+        example: "Shoe"
+
+      quantity_available:
+        type: "Integer"
+        format: "int64"
+        example : 10
+
+      unit_price:
+        type: "float"
+        format: "float64"
+        example : 10.0
+
+      supplier:
+        type: "ObjectId(supplier)"
+        format: "object"
+        example : "Nike"
+
+     
+responses:
+  404:
+    description: "product_not_found"

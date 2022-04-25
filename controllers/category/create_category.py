@@ -9,9 +9,13 @@ from flask import Blueprint, request, jsonify
 # Database
 from configurations.database import mongo
 
+from flasgger import Swagger 
+from flasgger.utils import swag_from
+
 create_category_blueprint = Blueprint("create_category_blueprint", __name__)
 
 @create_category_blueprint.route("/create-category", methods=["POST"])
+@swag_from("create-category_config.yml")
 def create_category():
     category = request.json
     category_name = category["category_name"]

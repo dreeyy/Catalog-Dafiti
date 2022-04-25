@@ -1,0 +1,50 @@
+summary: "Create Product"
+description: ""
+consumes:
+- "aplication/json"
+produces:
+- "aplication/json"
+parameters:
+- in: "body"
+  name: "body"
+  description: "field body"
+  required: true
+  schema: 
+    type: "object"
+    properties:
+      produc_name:
+        type: "string"
+        format: "object"
+        example: "Camiseta"
+
+      category:
+        type: "ObjectId(category)"
+        format: "object"
+        example: "Shoe"
+
+      quantity_available:
+        type: "Integer"
+        format: "int64"
+        example : 10
+
+      unit_price:
+        type: "float"
+        format: "float64"
+        example : 10.0
+
+      supplier:
+        type: "ObjectId(supplier)"
+        format: "object"
+        example : "Nike"
+
+      image_url:
+        type: "url image"
+        format: "cloudinary url"
+        example : http://res.cloudinary.com/dfxkw9bdf/image/upload/v1650838264/product-catalog/product_image_jes9ra.jpg      
+
+      
+responses:
+  404:
+    description: "product_created_not_found"
+  500:
+    description: "product_image_upload_error"

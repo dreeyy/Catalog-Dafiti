@@ -10,9 +10,13 @@ from flask_bcrypt import generate_password_hash
 # Database
 from configurations.database import mongo
 
+from flasgger import Swagger 
+from flasgger.utils import swag_from
+
 create_user_blueprint = Blueprint("create_user_blueprint", __name__)
 
 @create_user_blueprint.route("/create-user", methods=["POST"])
+@swag_from("create-user_config.yml")
 def create_user():
     user = request.json
 

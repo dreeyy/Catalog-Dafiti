@@ -15,9 +15,14 @@ from dotenv import load_dotenv
 # Database
 from configurations.database import mongo
 
+from flasgger import Swagger 
+from flasgger.utils import swag_from
+
 create_product_blueprint = Blueprint("create_product_blueprint", __name__)
 
+
 @create_product_blueprint.route("/create-product", methods=["POST"])
+@swag_from("create-product_config.yml")
 def create_product():
     # product = request.json
 
